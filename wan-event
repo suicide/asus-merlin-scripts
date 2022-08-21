@@ -1,6 +1,9 @@
 #!/bin/sh
 
-if [ 'connected' == $2 ]
-  then
-  ./vpnrouting-restart.sh
+logger -t $(basename $0) "Running with $1 $2"
+
+parent_path=$(dirname "$0")
+
+if [ "connected" = "$2" ]; then
+  ${parent_path}/vpnrouting-restart.sh
 fi
