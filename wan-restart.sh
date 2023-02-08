@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cru a resetInternet "57 8 * * * service restart_wan"
+cru a resetInternet "3 5 * * * service restart_wan"
