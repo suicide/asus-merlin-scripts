@@ -1,0 +1,15 @@
+#!/bin/sh
+
+USERNAME=
+PASSWORD=
+IP=${1}
+
+# curl -fs -o /dev/null -u "${USERNAME}:${PASSWORD}" "https://dyndns.kasserver.com/?myip=${IP}"
+curl -fs -o /dev/null -u "${USERNAME}:${PASSWORD}" "https://dyndns.kasserver.com/"
+
+if [ $? -eq 0 ]; then
+    /sbin/ddns_custom_updated 1
+else
+    /sbin/ddns_custom_updated 0
+fi
+
